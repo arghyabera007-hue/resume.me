@@ -1,6 +1,6 @@
-/* ── Glass Search Bar Styling ─────────────────────────────────────────────── */
+/* ── Liquid Glass Search Bar ─────────────────────────────────────────────── */
 
-.glass-search-wrapper {
+.liquid-search-anchor {
   position: fixed;
   top: 20px;
   right: 24px;
@@ -8,350 +8,268 @@
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
-/* ── Closed / Minimized Trigger Button ───────────────────────────────────────── */
-.glass-search-trigger {
+/* ── Main Liquid Glass Card ─────────────────────────────────────────────────── */
+.liquid-glass-card {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 14px 8px 12px;
-  border-radius: 9999px;
-  cursor: pointer;
-
-  /* Frosted Glass Base */
-  background: rgba(22, 28, 42, 0.72);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 
-    0 4px 18px rgba(0, 0, 0, 0.18),
-    inset 0 1px 1px rgba(255, 255, 255, 0.3);
-
-  color: #ffffff;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  user-select: none;
-}
-
-.glass-search-trigger:hover {
-  background: rgba(22, 28, 42, 0.85);
-  border-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 
-    0 6px 24px rgba(0, 0, 0, 0.25),
-    0 0 12px rgba(255, 255, 255, 0.4),
-    inset 0 1px 1px rgba(255, 255, 255, 0.5);
-  transform: translateY(-1px);
-}
-
-.glass-search-trigger:active {
-  transform: translateY(0);
-}
-
-.glass-search-trigger__text {
-  font-size: 0.85rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.01em;
-}
-
-.glass-search-trigger__kbd {
-  font-size: 0.7rem;
-  font-family: inherit;
-  font-weight: 600;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* ── Expanded Glass Card Container ───────────────────────────────────────────── */
-.glass-card-container {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 360px;
+  width: 330px;
   max-width: calc(100vw - 32px);
-  transform-origin: top right;
-}
-
-@keyframes glassPopIn {
-  from {
-    opacity: 0;
-    transform: scale(0.92) translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.animate-glass-in {
-  animation: glassPopIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* ── Main Glass Card Frame ───────────────────────────────────────────────────── */
-.glass-card {
-  position: relative;
+  padding: 16px;
+  border-radius: 24px;
   overflow: hidden;
-  padding: 18px;
-  border-radius: 22px;
 
-  /* Frosted Glass Background & Shadows */
-  background: linear-gradient(
-    145deg,
-    rgba(25, 30, 45, 0.75) 0%,
-    rgba(15, 20, 32, 0.82) 100%
+  /* Luminous Liquid Glass Gradient & Refraction */
+  background: radial-gradient(
+    130% 130% at 15% 5%,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.14) 38%,
+    rgba(20, 26, 40, 0.52) 100%
   );
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  backdrop-filter: blur(36px) saturate(220%) brightness(1.12);
+  -webkit-backdrop-filter: blur(36px) saturate(220%) brightness(1.12);
 
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  /* Dual Liquid Specular Rim & Tension Highlights */
+  border: 1px solid rgba(255, 255, 255, 0.55);
   box-shadow:
-    0 24px 50px rgba(0, 0, 0, 0.42),
-    0 1px 1px rgba(255, 255, 255, 0.2),
-    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+    0 20px 48px -8px rgba(0, 0, 0, 0.38),
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.85),
+    inset 1.5px 0 2px 0 rgba(255, 255, 255, 0.45),
+    inset -1px -1px 2px 0 rgba(255, 255, 255, 0.25);
+
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Diagonal glass sheen overlay */
-.glass-card__sheen {
+/* Top curved liquid glossy sheen reflection */
+.liquid-glass-card__gloss {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 48%;
+  border-radius: 24px 24px 0 0;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.02) 60%,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0.05) 60%,
     transparent 100%
   );
   pointer-events: none;
-  border-radius: 22px 22px 0 0;
 }
 
-/* ── Glowing Search Input Box ────────────────────────────────────────────────── */
-.glass-search-input-box {
+/* ── Glowing Liquid Search Box ──────────────────────────────────────────────── */
+.liquid-search-box {
   position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 9px 12px;
-  border-radius: 12px;
+  height: 44px;
+  padding: 0 14px;
+  border-radius: 14px;
 
-  /* Neon White Glowing Border (Matching reference image) */
-  background: rgba(255, 255, 255, 0.08);
-  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  /* Intense White Neon Glowing Perimeter matching reference */
+  background: rgba(255, 255, 255, 0.12);
+  border: 1.8px solid #ffffff;
   box-shadow:
-    0 0 12px rgba(255, 255, 255, 0.75),
-    0 0 2px #ffffff,
-    inset 0 0 6px rgba(255, 255, 255, 0.25);
+    0 0 14px rgba(255, 255, 255, 0.9),
+    0 0 28px rgba(255, 255, 255, 0.4),
+    inset 0 0 8px rgba(255, 255, 255, 0.3);
 
+  cursor: text;
   transition: all 0.2s ease;
 }
 
-.glass-search-input {
+.liquid-search-box:hover {
+  box-shadow:
+    0 0 16px rgba(255, 255, 255, 1),
+    0 0 32px rgba(255, 255, 255, 0.55),
+    inset 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.liquid-search-box__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.liquid-search-input {
   flex: 1;
   background: transparent;
   border: none;
   outline: none;
   font-family: inherit;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: #ffffff;
   letter-spacing: 0.01em;
 }
 
-.glass-search-input::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+.liquid-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
 }
 
-.glass-search-action-btn {
+.liquid-search-box__action {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0.75);
-  background: rgba(255, 255, 255, 0.12);
-  cursor: pointer;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
   border: none;
+  cursor: pointer;
   transition: all 0.15s ease;
+  flex-shrink: 0;
 }
 
-.glass-search-action-btn:hover {
+.liquid-search-box__action:hover {
   color: #ffffff;
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-/* ── Inner Results / Recent Searches Panel ───────────────────────────────────── */
-.glass-dropdown-panel {
-  margin-top: 12px;
+/* ── Nested Liquid Panel ────────────────────────────────────────────────────── */
+.liquid-dropdown-panel {
+  position: relative;
+  margin-top: 14px;
   padding: 10px 8px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+
+  /* Frosted liquid nested surface */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.25),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.15);
 }
 
-/* Panel Header Row */
-.glass-panel-header {
+@keyframes liquidDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-liquid-fade {
+  animation: liquidDropdownFade 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Header row inside panel */
+.liquid-dropdown-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 8px 8px;
+  padding: 4px 8px 10px;
   user-select: none;
 }
 
-.glass-panel-header__title {
-  font-size: 0.82rem;
+.liquid-dropdown-header__title {
+  font-size: 0.84rem;
   font-weight: 600;
   color: #ffffff;
   letter-spacing: 0.01em;
 }
 
-.glass-panel-header__hint {
-  font-size: 0.74rem;
+.liquid-dropdown-header__hint {
+  font-size: 0.76rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.02em;
 }
 
-/* ── Results List ────────────────────────────────────────────────────────────── */
-.glass-results-list {
+/* ── Minimal Items List ─────────────────────────────────────────────────────── */
+.liquid-items-list {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  max-height: 280px;
+  max-height: 240px;
   overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-width: none;
 }
 
-.glass-results-list::-webkit-scrollbar {
-  width: 4px;
+.liquid-items-list::-webkit-scrollbar {
+  display: none;
 }
 
-.glass-results-list::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
-}
-
-/* Individual Search / History Item */
-.glass-item {
+/* Clean minimal single-line item */
+.liquid-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 8px 10px;
-  border-radius: 8px;
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 10px;
   cursor: pointer;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 0.85rem;
-  transition: all 0.15s ease;
+  font-size: 0.88rem;
+  transition: all 0.14s ease;
   user-select: none;
 }
 
-.glass-item__left {
+.liquid-item__left {
   display: flex;
   align-items: center;
   gap: 10px;
   min-width: 0;
 }
 
-.glass-item__icon-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.75);
-  flex-shrink: 0;
-}
-
-.glass-item__title {
+.liquid-item__label {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 400;
 }
 
-.glass-item__right {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.glass-item__badge-faint {
-  font-size: 0.68rem;
-  padding: 1px 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.07);
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.glass-item__badge {
-  font-size: 0.68rem;
-  padding: 1px 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 500;
-}
-
-.glass-item__repeat-icon {
+.liquid-item__right {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff;
+  flex-shrink: 0;
 }
 
-/* ── Selected / Hovered Glass Capsule (Matching reference "Modern UI design") ─ */
-.glass-item.is-selected {
-  background: rgba(255, 255, 255, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+/* ── Selected Liquid Capsule (1:1 with "Modern UI design" in reference) ─────── */
+.liquid-item.is-selected {
+  background: rgba(255, 255, 255, 0.26);
+  border: 1.2px solid rgba(255, 255, 255, 0.65);
   box-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 4px 14px rgba(0, 0, 0, 0.12),
+    inset 0 1px 1px rgba(255, 255, 255, 0.55);
   color: #ffffff;
 }
 
-.glass-item.is-selected .glass-item__title {
+.liquid-item.is-selected .liquid-item__label {
   font-weight: 500;
 }
 
-.glass-item.is-selected .glass-item__icon-wrap {
-  color: #ffffff;
-}
-
-/* No Results State */
-.glass-no-results {
-  padding: 18px 10px;
+/* Empty state */
+.liquid-no-match {
+  padding: 16px 8px;
   text-align: center;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.6);
   font-style: italic;
 }
 
-/* ── Icons ───────────────────────────────────────────────────────────────────── */
-.glass-icon {
+/* Icons */
+.liquid-icon {
   display: block;
 }
 
-.glass-icon--search {
+.liquid-icon--history {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.liquid-item.is-selected .liquid-icon--history {
   color: #ffffff;
 }
 
-.glass-icon--close {
-  color: inherit;
-}
-
-.glass-icon--history,
-.glass-icon--compass,
-.glass-icon--return {
-  color: inherit;
-}
-
-/* ── Target Pulse Highlight when navigating to a section ────────────────────── */
-@keyframes componentTargetPulse {
+/* Target section pulse when jumping */
+@keyframes liquidTargetPulse {
   0% {
     outline: 2px solid rgba(196, 99, 58, 0.8);
     box-shadow: 0 0 0 0 rgba(196, 99, 58, 0.4);
@@ -370,34 +288,38 @@
 }
 
 .component-highlight {
-  animation: componentTargetPulse 1.8s ease-out;
+  animation: liquidTargetPulse 1.8s ease-out;
   border-radius: var(--radius-md, 8px);
 }
 
 /* ── Responsive adjustments ──────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .glass-search-wrapper {
-    top: 16px;
-    right: 66px; /* Place right next to the 40px hamburger toggle at right: 16px */
+  .liquid-search-anchor {
+    top: 14px;
+    right: 66px;
   }
 
-  .glass-search-trigger__text {
-    display: none; /* Icon and ⌘K only on medium/small screens for sleek fit */
+  .liquid-glass-card {
+    width: 250px;
+    padding: 12px;
   }
 
-  .glass-search-trigger {
-    padding: 8px 10px;
+  .liquid-glass-card.is-open {
+    width: 290px;
   }
 
-  .glass-card-container {
-    right: -50px; /* Center dropdown better relative to top right */
-    width: 320px;
+  .liquid-search-box {
+    height: 40px;
+    padding: 0 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .glass-card-container {
-    right: -52px;
-    width: calc(100vw - 32px);
+  .liquid-glass-card.is-open {
+    position: fixed;
+    top: 14px;
+    left: 16px;
+    right: 16px;
+    width: auto;
   }
 }
