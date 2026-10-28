@@ -1,15 +1,6 @@
 import { useEffect } from 'react';
 import { profile } from '../data/portfolio';
 
-const NAV_ITEMS = [
-  { label: 'About',      id: 'about'     },
-  { label: 'Experience', id: 'experience'},
-  { label: 'Education',  id: 'education' },
-  { label: 'Skills',     id: 'skills'    },
-  { label: 'Projects',   id: 'projects'  },
-  { label: 'Contact',    id: 'contact'   },
-];
-
 function IconGlobe() {
   return (
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -59,7 +50,7 @@ function IconMail() {
   );
 }
 
-export default function Sidebar({ activeSection, isOpen, onClose }) {
+export default function Sidebar({ isOpen, onClose }) {
   // Close sidebar on escape
   useEffect(() => {
     function handleKeyDown(e) {
@@ -101,21 +92,6 @@ export default function Sidebar({ activeSection, isOpen, onClose }) {
       </div>
 
       <div className="sidebar__divider" />
-
-      {/* Navigation */}
-      <nav className="sidebar__nav" aria-label="Portfolio navigation">
-        {NAV_ITEMS.map(item => (
-          <button
-            key={item.id}
-            className={`sidebar__nav-link${activeSection === item.id ? ' active' : ''}`}
-            onClick={() => scrollTo(item.id)}
-            aria-label={`Navigate to ${item.label} section`}
-          >
-            <span className="sidebar__nav-dot" aria-hidden="true" />
-            {item.label}
-          </button>
-        ))}
-      </nav>
 
       {/* Footer */}
       <footer className="sidebar__footer">

@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import './index.css';
 import Sidebar from './components/Sidebar';
+import GlassSearchBar from './components/GlassSearchBar';
 import Hero from './components/Hero';
 import About from './components/About';
 import { Experience, Education } from './components/Timeline';
@@ -8,7 +9,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import BackToTop from './components/BackToTop';
-import { useActiveSection, useRevealOnScroll } from './hooks/useScrollObserver';
+import { useRevealOnScroll } from './hooks/useScrollObserver';
 
 function IconMenu() {
   return (
@@ -27,7 +28,6 @@ function IconX() {
 }
 
 export default function App() {
-  const activeSection = useActiveSection();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   useRevealOnScroll();
 
@@ -36,11 +36,14 @@ export default function App() {
 
   return (
     <>
+      {/* Top Right Frosted Glass Search Bar */}
+      <GlassSearchBar />
+
       {/* Mobile nav toggle */}
       <button
         className="mobile-nav-toggle"
         onClick={toggleSidebar}
-        aria-label={sidebarOpen ? 'Close navigation' : 'Open navigation'}
+        aria-label={sidebarOpen ? 'Close profile' : 'Open profile'}
         aria-expanded={sidebarOpen}
         aria-controls="sidebar"
         id="mobile-menu-btn"
@@ -57,7 +60,6 @@ export default function App() {
 
       <div className="layout">
         <Sidebar
-          activeSection={activeSection}
           isOpen={sidebarOpen}
           onClose={closeSidebar}
         />
