@@ -1,0 +1,193 @@
+{
+  "nodes": [
+    {
+      "id": "public_favicon_svg",
+      "label": "Favicon Vector Graphic",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_icons_svg",
+      "label": "SVG Icon Sprite Sheet",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\icons.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_profile_jpg",
+      "label": "Profile Avatar Photograph",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\profile.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_project_aitools_jpg",
+      "label": "AI Tools Showcase Screenshot",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\project-aitools.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_project_ecommerce_jpg",
+      "label": "E-Commerce App Screenshot",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\project-ecommerce.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_project_taskmanager_jpg",
+      "label": "Task Manager Showcase Screenshot",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\project-taskmanager.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_assets_hero_png",
+      "label": "Hero Section Artwork",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\src\\assets\\hero.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_assets_react_svg",
+      "label": "React Framework Logo Vector",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\src\\assets\\react.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_assets_vite_svg",
+      "label": "Vite Bundler Logo Vector",
+      "file_type": "image",
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\src\\assets\\vite.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "src_components_hero_hero",
+      "target": "src_assets_hero_png",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\src\\assets\\hero.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_portfolio_profile",
+      "target": "public_profile_jpg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\profile.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_portfolio_projects",
+      "target": "public_project_aitools_jpg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\project-aitools.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_portfolio_projects",
+      "target": "public_project_ecommerce_jpg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\project-ecommerce.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_portfolio_projects",
+      "target": "public_project_taskmanager_jpg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\project-taskmanager.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "index_html",
+      "target": "src_assets_vite_svg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\src\\assets\\vite.svg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_sidebar_sidebar",
+      "target": "public_icons_svg",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\icons.svg",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "portfolio_project_previews",
+      "label": "Project Preview Media Assets",
+      "nodes": [
+        "public_project_aitools_jpg",
+        "public_project_ecommerce_jpg",
+        "public_project_taskmanager_jpg"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "C:\\Users\\User\\Downloads\\resuma-portfolio\\public\\project-aitools.jpg"
+    }
+  ],
+  "input_tokens": 1500,
+  "output_tokens": 500
+}
+
