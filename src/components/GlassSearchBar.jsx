@@ -310,15 +310,16 @@ export default function GlassSearchBar() {
         />
       )}
 
-      {/* Top right floating trigger button - compact frosted glass pill */}
+      {/* Top right floating trigger button - medium frosted glass pill */}
       {!isOpen && (
         <button
           className="glass-search-trigger glass"
           onClick={() => setIsOpen(true)}
-          aria-label="Search components"
-          title="Search components (⌘K)"
+          aria-label="Search"
+          title="Search (⌘K)"
         >
           <IconSearch />
+          <span className="glass-search-trigger__text">Search...</span>
           <kbd className="glass-search-trigger__kbd">⌘K</kbd>
         </button>
       )}
@@ -335,7 +336,7 @@ export default function GlassSearchBar() {
                 ref={inputRef}
                 type="text"
                 className="glass-search-input"
-                placeholder="Search..."
+                placeholder="Search components, skills, projects..."
                 value={query}
                 onChange={e => {
                   setQuery(e.target.value);
