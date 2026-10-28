@@ -310,13 +310,13 @@ export default function GlassSearchBar() {
         />
       )}
 
-      {/* Top right compact glass trigger button (word removed & small size) */}
+      {/* Top right floating trigger button - compact frosted glass pill */}
       {!isOpen && (
         <button
           className="glass-search-trigger glass"
           onClick={() => setIsOpen(true)}
           aria-label="Search components"
-          title="Search components (Ctrl + K)"
+          title="Search components (⌘K)"
         >
           <IconSearch />
           <kbd className="glass-search-trigger__kbd">⌘K</kbd>
