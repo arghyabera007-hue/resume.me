@@ -232,6 +232,30 @@ ol {
   color: var(--clr-text-faint);
 }
 
+/* Sidebar signature */
+.sidebar__signature-wrap {
+  display: flex;
+  align-items: center;
+  margin-top: var(--sp-2);
+  margin-bottom: var(--sp-6);
+  padding: var(--sp-1) 0;
+}
+
+.sidebar__signature {
+  height: 48px;
+  width: auto;
+  max-width: 165px;
+  object-fit: contain;
+  opacity: 0.92;
+  user-select: none;
+  transition: transform var(--t-fast), opacity var(--t-fast);
+}
+
+.sidebar__signature:hover {
+  transform: scale(1.04) rotate(-1deg);
+  opacity: 1;
+}
+
 .sidebar__divider {
   height: 1px;
   background: var(--clr-border);

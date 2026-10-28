@@ -91,6 +91,16 @@ export default function Sidebar({ isOpen, onClose }) {
         </span>
       </div>
 
+      {/* Signature */}
+      <div className="sidebar__signature-wrap" aria-label="Personal signature">
+        <img
+          src="/signature.png"
+          alt="Arghya signature"
+          className="sidebar__signature"
+          loading="lazy"
+        />
+      </div>
+
       <div className="sidebar__divider" />
 
       {/* Footer */}
