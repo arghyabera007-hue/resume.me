@@ -50,10 +50,10 @@ export default function Contact() {
   return (
     <section id="contact" className="section reveal" aria-labelledby="contact-heading">
       <p className="section__label">Contact</p>
-      <h2 id="contact-heading" className="section__title">Let&apos;s talk</h2>
+      <h2 id="contact-heading" className="section__title">Let&apos;s Trade Ideas</h2>
       <p className="contact__intro">
-        Have a project in mind, want to collaborate, or just say hello? Fill in the
-        form below and I&apos;ll get back to you as soon as possible.
+        I&apos;m always glad to hear about interesting collaborations, open-source work, or a
+        Arghya Bera or Go problem worth thinking through together.
       </p>
 
       {status === 'success' && (

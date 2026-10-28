@@ -60,7 +60,7 @@ const SEARCHABLE_ITEMS = [
     title: 'Contact Form',
     subtitle: 'Direct messaging, inquiries & social links',
     category: 'Component',
-    keywords: ['contact', 'email', 'message', 'reach out', 'hire', 'get in touch', 'social'],
+    keywords: ['contact', 'email', 'message', 'reach out', 'hire', 'get in touch', 'trade ideas', 'collaborate', 'social'],
     badge: 'Section'
   },
   // Sub-items for deep search
