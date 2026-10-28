@@ -1,6 +1,6 @@
-/* ── Liquid Glass Search Bar ─────────────────────────────────────────────── */
+/* ── Glass Search Bar Styling ─────────────────────────────────────────────── */
 
-.liquid-search-anchor {
+.glass-search-wrapper {
   position: fixed;
   top: 20px;
   right: 24px;
@@ -8,107 +8,189 @@
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
 }
 
-/* ── Main Liquid Glass Card ─────────────────────────────────────────────────── */
-.liquid-glass-card {
-  position: relative;
-  width: 330px;
-  max-width: calc(100vw - 32px);
-  padding: 16px;
-  border-radius: 24px;
-  overflow: hidden;
-
-  /* Luminous Liquid Glass Gradient & Refraction */
-  background: radial-gradient(
-    130% 130% at 15% 5%,
-    rgba(255, 255, 255, 0.38) 0%,
-    rgba(255, 255, 255, 0.14) 38%,
-    rgba(20, 26, 40, 0.52) 100%
-  );
-  backdrop-filter: blur(36px) saturate(220%) brightness(1.12);
-  -webkit-backdrop-filter: blur(36px) saturate(220%) brightness(1.12);
-
-  /* Dual Liquid Specular Rim & Tension Highlights */
-  border: 1px solid rgba(255, 255, 255, 0.55);
+/* ── Glass Specification (User Provided) ─────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.14);          /* tint */
+  backdrop-filter: blur(18px) saturate(140%);     /* frosted blur */
+  -webkit-backdrop-filter: blur(18px) saturate(140%); /* Safari */
+  border: 1px solid rgba(255, 255, 255, 0.35);    /* edge */
+  border-radius: 14px;
   box-shadow:
-    0 20px 48px -8px rgba(0, 0, 0, 0.38),
-    0 4px 16px rgba(0, 0, 0, 0.15),
-    inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.85),
-    inset 1.5px 0 2px 0 rgba(255, 255, 255, 0.45),
-    inset -1px -1px 2px 0 rgba(255, 255, 255, 0.25);
-
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    0 20px 50px rgba(0, 0, 0, 0.25),              /* depth */
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);      /* top highlight */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Top curved liquid glossy sheen reflection */
-.liquid-glass-card__gloss {
+/* diagonal light sheen */
+.glass::before {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 48%;
-  border-radius: 24px 24px 0 0;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0.05) 60%,
-    transparent 100%
-  );
+  inset: 0;
+  border-radius: inherit;
   pointer-events: none;
+  background: linear-gradient(135deg,
+    rgba(255,255,255,.28), transparent 35%,
+    transparent 65%, rgba(255,255,255,.08));
+  z-index: 1;
 }
 
-/* ── Glowing Liquid Search Box ──────────────────────────────────────────────── */
-.liquid-search-box {
+/* ── Backdrop Overlay ────────────────────────────────────────────────────────── */
+.glass-search-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 17, 28, 0.42);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 998;
+  animation: glassBackdropFade 0.2s ease forwards;
+}
+
+@keyframes glassBackdropFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Closed / Minimized Trigger Button ───────────────────────────────────────── */
+.glass-search-trigger {
   position: relative;
   display: flex;
   align-items: center;
   gap: 10px;
-  height: 44px;
-  padding: 0 14px;
-  border-radius: 14px;
+  padding: 8px 14px 8px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  z-index: 999;
+}
 
-  /* Intense White Neon Glowing Perimeter matching reference */
-  background: rgba(255, 255, 255, 0.12);
-  border: 1.8px solid #ffffff;
+.glass-search-trigger.glass {
+  background: rgba(22, 28, 42, 0.75);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.glass-search-trigger:hover {
+  background: rgba(22, 28, 42, 0.88);
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.28),
+    0 0 12px rgba(255, 255, 255, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.glass-search-trigger:active {
+  transform: translateY(0);
+}
+
+.glass-search-trigger__text {
+  position: relative;
+  z-index: 2;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.01em;
+}
+
+.glass-search-trigger__kbd {
+  position: relative;
+  z-index: 2;
+  font-size: 0.7rem;
+  font-family: inherit;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.glass-search-trigger .glass-icon {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Expanded Glass Card Container ───────────────────────────────────────────── */
+.glass-card-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 360px;
+  max-width: calc(100vw - 32px);
+  transform-origin: top right;
+  z-index: 1000;
+}
+
+@keyframes glassPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-glass-in {
+  animation: glassPopIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Main Glass Card Frame ───────────────────────────────────────────────────── */
+.glass-card {
+  padding: 16px;
+}
+
+.glass-card.glass {
+  border-radius: 18px;
+}
+
+/* Ensure inner elements sit cleanly above the ::before diagonal sheen */
+.glass-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Glowing Search Input Box (From Reference) ───────────────────────────────── */
+.glass-search-input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 12px;
+
+  /* Neon White Glowing Border (Matching reference image) */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
   box-shadow:
-    0 0 14px rgba(255, 255, 255, 0.9),
-    0 0 28px rgba(255, 255, 255, 0.4),
-    inset 0 0 8px rgba(255, 255, 255, 0.3);
+    0 0 12px rgba(255, 255, 255, 0.75),
+    0 0 2px #ffffff,
+    inset 0 0 6px rgba(255, 255, 255, 0.25);
 
-  cursor: text;
   transition: all 0.2s ease;
 }
 
-.liquid-search-box:hover {
-  box-shadow:
-    0 0 16px rgba(255, 255, 255, 1),
-    0 0 32px rgba(255, 255, 255, 0.55),
-    inset 0 0 10px rgba(255, 255, 255, 0.4);
-}
-
-.liquid-search-box__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  flex-shrink: 0;
-}
-
-.liquid-search-input {
+.glass-search-input {
   flex: 1;
   background: transparent;
   border: none;
   outline: none;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: #ffffff;
   letter-spacing: 0.01em;
 }
 
-.liquid-search-input::placeholder {
-  color: rgba(255, 255, 255, 0.65);
+.glass-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.liquid-search-box__action {
+.glass-search-action-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,160 +198,186 @@
   height: 22px;
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.85);
-  background: transparent;
-  border: none;
+  background: rgba(255, 255, 255, 0.15);
   cursor: pointer;
+  border: none;
   transition: all 0.15s ease;
-  flex-shrink: 0;
 }
 
-.liquid-search-box__action:hover {
+.glass-search-action-btn:hover {
   color: #ffffff;
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
 }
 
-/* ── Nested Liquid Panel ────────────────────────────────────────────────────── */
-.liquid-dropdown-panel {
-  position: relative;
-  margin-top: 14px;
+/* ── Inner Results / Recent Searches Panel ───────────────────────────────────── */
+.glass-dropdown-panel {
+  margin-top: 12px;
   padding: 10px 8px;
-  border-radius: 16px;
-
-  /* Frosted liquid nested surface */
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow:
-    inset 0 1px 2px rgba(255, 255, 255, 0.25),
-    inset 0 -1px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes liquidDropdownFade {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-liquid-fade {
-  animation: liquidDropdownFade 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Header row inside panel */
-.liquid-dropdown-header {
+/* Panel Header Row */
+.glass-panel-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 8px 10px;
+  padding: 4px 8px 8px;
   user-select: none;
 }
 
-.liquid-dropdown-header__title {
-  font-size: 0.84rem;
+.glass-panel-header__title {
+  font-size: 0.82rem;
   font-weight: 600;
   color: #ffffff;
   letter-spacing: 0.01em;
 }
 
-.liquid-dropdown-header__hint {
-  font-size: 0.76rem;
+.glass-panel-header__hint {
+  font-size: 0.74rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.02em;
 }
 
-/* ── Minimal Items List ─────────────────────────────────────────────────────── */
-.liquid-items-list {
+/* ── Results List ────────────────────────────────────────────────────────────── */
+.glass-results-list {
   display: flex;
   flex-direction: column;
   gap: 3px;
-  max-height: 240px;
+  max-height: 280px;
   overflow-y: auto;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
-.liquid-items-list::-webkit-scrollbar {
-  display: none;
+.glass-results-list::-webkit-scrollbar {
+  width: 4px;
 }
 
-/* Clean minimal single-line item */
-.liquid-item {
+.glass-results-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+/* Individual Search / History Item */
+.glass-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 38px;
-  padding: 0 10px;
-  border-radius: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.88rem;
-  transition: all 0.14s ease;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  transition: all 0.15s ease;
   user-select: none;
 }
 
-.liquid-item__left {
+.glass-item__left {
   display: flex;
   align-items: center;
   gap: 10px;
   min-width: 0;
 }
 
-.liquid-item__label {
+.glass-item__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.75);
+  flex-shrink: 0;
+}
+
+.glass-item__title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 400;
 }
 
-.liquid-item__right {
+.glass-item__right {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: #ffffff;
+  gap: 8px;
   flex-shrink: 0;
 }
 
-/* ── Selected Liquid Capsule (1:1 with "Modern UI design" in reference) ─────── */
-.liquid-item.is-selected {
-  background: rgba(255, 255, 255, 0.26);
-  border: 1.2px solid rgba(255, 255, 255, 0.65);
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.12),
-    inset 0 1px 1px rgba(255, 255, 255, 0.55);
-  color: #ffffff;
+.glass-item__badge-faint {
+  font-size: 0.68rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.liquid-item.is-selected .liquid-item__label {
+.glass-item__badge {
+  font-size: 0.68rem;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 500;
 }
 
-/* Empty state */
-.liquid-no-match {
-  padding: 16px 8px;
-  text-align: center;
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-style: italic;
+.glass-item__repeat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.95);
 }
 
-/* Icons */
-.liquid-icon {
-  display: block;
-}
-
-.liquid-icon--history {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.liquid-item.is-selected .liquid-icon--history {
+/* ── Selected / Hovered Glass Capsule (Matching reference "Modern UI design") ─ */
+.glass-item.is-selected {
+  background: rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
   color: #ffffff;
 }
 
-/* Target section pulse when jumping */
-@keyframes liquidTargetPulse {
+.glass-item.is-selected .glass-item__title {
+  font-weight: 500;
+}
+
+.glass-item.is-selected .glass-item__icon-wrap {
+  color: #ffffff;
+}
+
+/* No Results State */
+.glass-no-results {
+  padding: 18px 10px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+
+/* ── Icons ───────────────────────────────────────────────────────────────────── */
+.glass-icon {
+  display: block;
+}
+
+.glass-icon--search {
+  color: #ffffff;
+}
+
+.glass-icon--close {
+  color: inherit;
+}
+
+.glass-icon--history,
+.glass-icon--compass,
+.glass-icon--return {
+  color: inherit;
+}
+
+/* ── Target Pulse Highlight when navigating to a section ────────────────────── */
+@keyframes componentTargetPulse {
   0% {
     outline: 2px solid rgba(196, 99, 58, 0.8);
     box-shadow: 0 0 0 0 rgba(196, 99, 58, 0.4);
@@ -288,38 +396,34 @@
 }
 
 .component-highlight {
-  animation: liquidTargetPulse 1.8s ease-out;
+  animation: componentTargetPulse 1.8s ease-out;
   border-radius: var(--radius-md, 8px);
 }
 
 /* ── Responsive adjustments ──────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .liquid-search-anchor {
-    top: 14px;
-    right: 66px;
+  .glass-search-wrapper {
+    top: 16px;
+    right: 66px; /* Place right next to the 40px hamburger toggle at right: 16px */
   }
 
-  .liquid-glass-card {
-    width: 250px;
-    padding: 12px;
+  .glass-search-trigger__text {
+    display: none; /* Icon and ⌘K only on medium/small screens for sleek fit */
   }
 
-  .liquid-glass-card.is-open {
-    width: 290px;
+  .glass-search-trigger {
+    padding: 8px 10px;
   }
 
-  .liquid-search-box {
-    height: 40px;
-    padding: 0 10px;
+  .glass-card-container {
+    right: -50px; /* Center dropdown better relative to top right */
+    width: 320px;
   }
 }
 
 @media (max-width: 480px) {
-  .liquid-glass-card.is-open {
-    position: fixed;
-    top: 14px;
-    left: 16px;
-    right: 16px;
-    width: auto;
+  .glass-card-container {
+    right: -52px;
+    width: calc(100vw - 32px);
   }
 }
