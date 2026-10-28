@@ -21,10 +21,14 @@ const SEARCHABLE_ITEMS = [
   },
   {
     id: 'skills',
-    title: 'Skills Matrix',
-    subtitle: 'Frontend, Backend, Cloud & DevOps tooling',
+    title: 'Skills & Tech Stack',
+    subtitle: 'Languages, Frontend, Backend, Databases & DevOps',
     category: 'Component',
-    keywords: ['skills', 'tech stack', 'languages', 'frontend', 'backend', 'tools', 'technologies', 'react', 'typescript', 'node'],
+    keywords: [
+      'skills', 'tech stack', 'languages', 'frontend', 'backend', 'tools', 'technologies',
+      'c', 'c++', 'cpp', 'java', 'python', 'javascript', 'html5', 'css3', 'git', 'figma',
+      'docker', 'mongodb', 'mysql', 'nodejs', 'react', 'tailwind', 'vue'
+    ],
     badge: 'Section'
   },
   {
@@ -86,18 +90,34 @@ const SEARCHABLE_ITEMS = [
   },
   {
     id: 'skills',
-    title: 'Frontend Tech Stack',
-    subtitle: 'React, TypeScript, Next.js, Tailwind CSS, Vite',
+    title: 'Programming Languages',
+    subtitle: 'C, C++, Java, Python, JavaScript',
     category: 'Skills',
-    keywords: ['frontend', 'react', 'typescript', 'next.js', 'css', 'tailwind', 'vite', 'figma'],
+    keywords: ['languages', 'c', 'cpp', 'c++', 'java', 'python', 'javascript'],
     badge: 'Skill'
   },
   {
     id: 'skills',
-    title: 'Backend & APIs',
-    subtitle: 'Node.js, Express, Python, FastAPI, GraphQL, REST',
+    title: 'Frontend & UI Frameworks',
+    subtitle: 'React, Vue.js, Tailwind CSS, HTML5, CSS3',
     category: 'Skills',
-    keywords: ['backend', 'node.js', 'express', 'python', 'fastapi', 'graphql', 'rest apis'],
+    keywords: ['frontend', 'react', 'vue', 'vuejs', 'tailwind', 'html5', 'css3'],
+    badge: 'Skill'
+  },
+  {
+    id: 'skills',
+    title: 'Backend & Databases',
+    subtitle: 'Node.js, MongoDB, MySQL',
+    category: 'Skills',
+    keywords: ['backend', 'databases', 'nodejs', 'node.js', 'mongodb', 'mysql'],
+    badge: 'Skill'
+  },
+  {
+    id: 'skills',
+    title: 'Tools & DevOps',
+    subtitle: 'Git, Docker, Figma',
+    category: 'Skills',
+    keywords: ['tools', 'devops', 'git', 'docker', 'figma'],
     badge: 'Skill'
   }
 ];
@@ -105,7 +125,7 @@ const SEARCHABLE_ITEMS = [
 const DEFAULT_RECENT = [
   'Hero Section',
   'Projects Showcase',
-  'Skills Matrix',
+  'Skills & Tech Stack',
   'Contact Form'
 ];
 

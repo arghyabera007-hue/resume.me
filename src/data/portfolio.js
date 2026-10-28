@@ -22,20 +22,104 @@ export const profile = {
 
 export const skills = [
   {
-    category: 'Frontend',
-    items: ['React', 'TypeScript', 'Next.js', 'CSS / Tailwind', 'Vite', 'Figma'],
+    category: 'Programming Languages',
+    items: [
+      {
+        name: 'C',
+        url: 'https://www.cprogramming.com/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg',
+      },
+      {
+        name: 'C++',
+        url: 'https://www.w3schools.com/cpp/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg',
+      },
+      {
+        name: 'Java',
+        url: 'https://www.java.com/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg',
+      },
+      {
+        name: 'Python',
+        url: 'https://www.python.org/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg',
+      },
+      {
+        name: 'JavaScript',
+        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg',
+      },
+    ],
   },
   {
-    category: 'Backend',
-    items: ['Node.js', 'Express', 'Python', 'FastAPI', 'GraphQL', 'REST APIs'],
+    category: 'Frontend & UI',
+    items: [
+      {
+        name: 'React',
+        url: 'https://reactjs.org/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg',
+      },
+      {
+        name: 'Vue.js',
+        url: 'https://vuejs.org/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg',
+      },
+      {
+        name: 'Tailwind CSS',
+        url: 'https://tailwindcss.com/',
+        icon: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
+      },
+      {
+        name: 'HTML5',
+        url: 'https://www.w3.org/html/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg',
+      },
+      {
+        name: 'CSS3',
+        url: 'https://www.w3schools.com/css/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg',
+      },
+    ],
   },
   {
-    category: 'Data & Cloud',
-    items: ['PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'AWS', 'Vercel'],
+    category: 'Backend & Databases',
+    items: [
+      {
+        name: 'Node.js',
+        url: 'https://nodejs.org/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg',
+      },
+      {
+        name: 'MongoDB',
+        url: 'https://www.mongodb.com/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg',
+      },
+      {
+        name: 'MySQL',
+        url: 'https://www.mysql.com/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg',
+      },
+    ],
   },
   {
-    category: 'Tools',
-    items: ['Git', 'GitHub Actions', 'Jest', 'Playwright', 'Linux', 'VS Code'],
+    category: 'Tools & DevOps',
+    items: [
+      {
+        name: 'Git',
+        url: 'https://git-scm.com/',
+        icon: 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg',
+      },
+      {
+        name: 'Docker',
+        url: 'https://www.docker.com/',
+        icon: 'https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg',
+      },
+      {
+        name: 'Figma',
+        url: 'https://www.figma.com/',
+        icon: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg',
+      },
+    ],
   },
 ];
 
