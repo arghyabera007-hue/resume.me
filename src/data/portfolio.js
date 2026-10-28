@@ -10,8 +10,8 @@ export const profile = {
   email: 'alex@example.com',
   avatar: '/profile.jpg',
   bio: [
-    'I\'m a full-stack developer with 5+ years of experience turning complex problems into elegant, user-focused solutions. I work across the entire stack — from designing REST APIs and databases to crafting polished, accessible interfaces.',
-    'I care deeply about code quality, performance, and the people who use the software I build. When I\'m not shipping features, I\'m exploring new tools, contributing to open source, or writing about things I\'ve learned.',
+    "I'm a passionate full-stack developer, currently pursuing my college degree in computer science. I love building real-world projects that solve meaningful problems, from web apps to AI-powered tools. I'm constantly exploring the world of AI and ML integration. I enjoy turning complex ideas into clean, functional code. Whether it's a hackathon project or a personal portfolio build, I give it my best.",
+    "I believe in learning by doing — every project teaches me something new. I'm comfortable working across the stack, from designing REST APIs to training deep learning models. Collaboration, curiosity, and consistency are the three things that drive me. I'm always open to connecting with like-minded developers and contributors. Let's build something amazing together.",
   ],
   social: {
     github: 'https://github.com/',
