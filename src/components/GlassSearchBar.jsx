@@ -111,7 +111,7 @@ const DEFAULT_RECENT = [
 
 function IconSearch() {
   return (
-    <svg className="glass-icon glass-icon--search" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="glass-icon glass-icon--search" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="11" cy="11" r="8" />
       <line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
@@ -310,7 +310,7 @@ export default function GlassSearchBar() {
         />
       )}
 
-      {/* Top right floating trigger button */}
+      {/* Top right compact glass trigger button (word removed & small size) */}
       {!isOpen && (
         <button
           className="glass-search-trigger glass"
@@ -319,7 +319,6 @@ export default function GlassSearchBar() {
           title="Search components (Ctrl + K)"
         >
           <IconSearch />
-          <span className="glass-search-trigger__text">Search components...</span>
           <kbd className="glass-search-trigger__kbd">⌘K</kbd>
         </button>
       )}
