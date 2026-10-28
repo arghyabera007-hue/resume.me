@@ -1,4 +1,5 @@
 import { profile } from '../data/portfolio';
+import { IconGithub, IconLinkedin, IconX } from './SocialIcons';
 
 function IconArrow() {
   return (
@@ -49,6 +50,45 @@ export default function Hero() {
         >
           View my work
         </a>
+      </div>
+
+      <div className="hero__social" aria-label="Social profiles">
+        <span className="hero__social-label">Connect:</span>
+        <div className="hero__social-links">
+          <a
+            href={profile.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero__social-link"
+            aria-label="GitHub profile"
+            title="GitHub"
+          >
+            <IconGithub size={15} />
+            <span>GitHub</span>
+          </a>
+          <a
+            href={profile.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero__social-link"
+            aria-label="LinkedIn profile"
+            title="LinkedIn"
+          >
+            <IconLinkedin size={15} />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href={profile.social.x || profile.social.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero__social-link"
+            aria-label="X (Twitter) profile"
+            title="X (Twitter)"
+          >
+            <IconX size={14} />
+            <span>X</span>
+          </a>
+        </div>
       </div>
     </section>
   );

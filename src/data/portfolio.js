@@ -15,8 +15,9 @@ export const profile = {
   ],
   social: {
     github: 'https://github.com/arghyabera007-hue',
-    linkedin: 'https://linkedin.com/',
-    twitter: 'https://twitter.com/',
+    linkedin: 'https://www.linkedin.com/in/arghya-bera-02538a31b',
+    x: 'https://x.com/ArghyaBera007',
+    twitter: 'https://x.com/ArghyaBera007',
   },
 };
 

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { profile } from '../data/portfolio';
+import { IconGithub, IconLinkedin, IconX } from './SocialIcons';
 
 function validate(fields) {
   const errors = {};
@@ -154,6 +155,42 @@ export default function Contact() {
           {status === 'sending' ? 'Opening mail…' : 'Send message'}
         </button>
       </form>
+
+      <div className="contact__social">
+        <p className="contact__social-label">Connect directly via</p>
+        <div className="contact__social-links" aria-label="Social media profiles">
+          <a
+            href={profile.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact__social-btn"
+            aria-label="GitHub profile"
+          >
+            <IconGithub size={16} />
+            <span>GitHub</span>
+          </a>
+          <a
+            href={profile.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact__social-btn"
+            aria-label="LinkedIn profile"
+          >
+            <IconLinkedin size={16} />
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href={profile.social.x || profile.social.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact__social-btn"
+            aria-label="X (Twitter) profile"
+          >
+            <IconX size={15} />
+            <span>X (Twitter)</span>
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
