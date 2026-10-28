@@ -518,53 +518,6 @@ ol {
   background-color: var(--clr-bg-subtle);
 }
 
-.hero__social {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--sp-3);
-  margin-top: var(--sp-6);
-  padding-top: var(--sp-5);
-  border-top: 1px dashed var(--clr-border);
-}
-
-.hero__social-label {
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semi);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--clr-text-faint);
-}
-
-.hero__social-links {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
-}
-
-.hero__social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-medium);
-  color: var(--clr-text-muted);
-  background-color: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-full);
-  transition: all var(--t-fast);
-  text-decoration: none;
-}
-
-.hero__social-link:hover {
-  color: var(--clr-text);
-  border-color: var(--clr-accent);
-  background-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(196, 99, 58, 0.12);
-}
-
 /* ── About ───────────────────────────────────────────────────────────────────── */
 .about__body {
   display: flex;
@@ -1011,52 +964,6 @@ ol {
 .btn-submit:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-.contact__social {
-  margin-top: var(--sp-8);
-  padding-top: var(--sp-6);
-  border-top: 1px solid var(--clr-border);
-  max-width: min(520px, 100%);
-}
-
-.contact__social-label {
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-semi);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--clr-text-faint);
-  margin-bottom: var(--sp-3);
-}
-
-.contact__social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sp-3);
-}
-
-.contact__social-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  padding: var(--sp-2) var(--sp-4);
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-medium);
-  color: var(--clr-text);
-  background-color: var(--clr-surface);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xs);
-  transition: all var(--t-fast);
-  text-decoration: none;
-}
-
-.contact__social-btn:hover {
-  border-color: var(--clr-accent);
-  color: var(--clr-accent-dark);
-  background-color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(196, 99, 58, 0.12);
 }
 
 /* ── Wave Footer ─────────────────────────────────────────────────────────────── */

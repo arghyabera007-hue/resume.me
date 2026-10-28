@@ -21,3 +21,4 @@ export function IconX({ size = 15 }) {
     </svg>
   );
 }
+
