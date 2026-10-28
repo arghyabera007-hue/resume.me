@@ -2,19 +2,19 @@
 // Replace these placeholder values with your actual information.
 
 export const profile = {
-  name: 'Alex Rivera',
+  name: 'Arghya Bera',
   role: 'Full-Stack Developer',
   tagline: 'Building thoughtful digital products with clean code and great UX.',
   location: 'San Francisco, CA',
   availability: 'Open to opportunities',
-  email: 'alex@example.com',
+  email: 'arghyabera007@gmail.com',
   avatar: '/profile.jpg',
   bio: [
     "I'm a passionate full-stack developer, currently pursuing my college degree in computer science. I love building real-world projects that solve meaningful problems, from web apps to AI-powered tools. I'm constantly exploring the world of AI and ML integration. I enjoy turning complex ideas into clean, functional code. Whether it's a hackathon project or a personal portfolio build, I give it my best.",
     "I believe in learning by doing — every project teaches me something new. I'm comfortable working across the stack, from designing REST APIs to training deep learning models. Collaboration, curiosity, and consistency are the three things that drive me. I'm always open to connecting with like-minded developers and contributors. Let's build something amazing together.",
   ],
   social: {
-    github: 'https://github.com/',
+    github: 'https://github.com/arghyabera007-hue',
     linkedin: 'https://linkedin.com/',
     twitter: 'https://twitter.com/',
   },
@@ -176,7 +176,7 @@ export const projects = [
       'A full-featured e-commerce platform with real-time inventory, order tracking, and an admin analytics dashboard. Built for scale with a microservices architecture.',
     tech: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Stripe'],
     image: '/project-ecommerce.jpg',
-    github: 'https://github.com/',
+    github: 'https://github.com/arghyabera007-hue',
     live: 'https://example.com/',
   },
   {
@@ -186,7 +186,7 @@ export const projects = [
       'A collaborative project management tool featuring Kanban boards, real-time updates via WebSockets, and team role management.',
     tech: ['React', 'TypeScript', 'Express', 'Socket.io', 'MongoDB'],
     image: '/project-taskmanager.jpg',
-    github: 'https://github.com/',
+    github: 'https://github.com/arghyabera007-hue',
     live: null,
   },
   {
@@ -196,7 +196,7 @@ export const projects = [
       'An AI chat interface that supports multiple LLM providers with streaming responses, conversation history, and model switching.',
     tech: ['Next.js', 'Python', 'FastAPI', 'OpenAI API', 'Redis'],
     image: '/project-aitools.jpg',
-    github: 'https://github.com/',
+    github: 'https://github.com/arghyabera007-hue',
     live: 'https://example.com/',
   },
 ];

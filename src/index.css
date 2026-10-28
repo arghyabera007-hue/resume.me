@@ -172,19 +172,32 @@ ol {
 }
 
 .sidebar__avatar-wrap {
-  width: 72px;
-  height: 72px;
+  width: 104px;
+  height: 104px;
   border-radius: var(--radius-full);
   overflow: hidden;
-  border: 2px solid var(--clr-border);
+  border: 2.5px solid var(--clr-border);
+  box-shadow: 0 4px 16px rgba(43, 33, 30, 0.08);
   margin-bottom: var(--sp-5);
   flex-shrink: 0;
+  transition: transform var(--t-fast), border-color var(--t-fast), box-shadow var(--t-fast);
+}
+
+.sidebar__avatar-wrap:hover {
+  transform: scale(1.03);
+  border-color: var(--clr-accent);
+  box-shadow: 0 6px 20px rgba(196, 99, 58, 0.16);
 }
 
 .sidebar__avatar-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 15%;
+}
+
+.hero__avatar-mobile {
+  display: none;
 }
 
 .sidebar__name {
@@ -1108,6 +1121,24 @@ ol {
 
   .hero {
     padding-top: var(--sp-8);
+  }
+
+  .hero__avatar-mobile {
+    display: block;
+    width: 104px;
+    height: 104px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    border: 2.5px solid var(--clr-border);
+    box-shadow: 0 4px 16px rgba(43, 33, 30, 0.08);
+    margin-bottom: var(--sp-5);
+  }
+
+  .hero__avatar-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
   }
 
   .hero__heading {

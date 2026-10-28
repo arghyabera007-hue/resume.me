@@ -15,6 +15,15 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero reveal" aria-labelledby="hero-heading">
+      {/* Mobile hero avatar (visible when sidebar drawer is closed) */}
+      <div className="hero__avatar-mobile">
+        <img
+          src={profile.avatar}
+          alt={`${profile.name} profile photo`}
+          loading="eager"
+        />
+      </div>
+
       <h2 id="hero-heading" className="hero__heading">
         Hi, I&apos;m {profile.name.split(' ')[0]}. I build{' '}
         <em>thoughtful</em> software.

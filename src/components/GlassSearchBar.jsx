@@ -8,7 +8,7 @@ const SEARCHABLE_ITEMS = [
     title: 'Hero Section',
     subtitle: 'Intro, tagline & call to action buttons',
     category: 'Component',
-    keywords: ['hero', 'intro', 'header', 'alex rivera', 'home', 'top', 'overview'],
+    keywords: ['hero', 'intro', 'header', 'arghya bera', 'arghya', 'home', 'top', 'overview'],
     badge: 'Section'
   },
   {
