@@ -1215,7 +1215,7 @@ ol {
   border-width: 0;
 }
 
-/* ── Back-to-top FAB ─────────────────────────────────────────────────────────── */
+/* ── Back-to-top Rocket FAB ────────────────────────────────────────────────── */
 .back-to-top {
   position: fixed;
   bottom: var(--sp-8);
@@ -1226,14 +1226,15 @@ ol {
   align-items: center;
   justify-content: center;
 
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: var(--radius-full);
 
   background-color: var(--clr-text);
   color: var(--clr-bg);
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 16px rgba(43, 33, 30, 0.18);
 
   /* Hidden by default — slides up from below */
   opacity: 0;
@@ -1245,28 +1246,75 @@ ol {
     background-color var(--t-fast),
     box-shadow var(--t-fast);
 
-  /* Contain the ripple */
+  /* Contain the blast / ripple */
   overflow: hidden;
 }
 
-/* Visible state — triggered by JS adding .back-to-top--visible */
+/* Visible state */
 .back-to-top--visible {
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
-/* Hover: lift + accent colour */
-.back-to-top:hover {
-  background-color: var(--clr-accent);
-  box-shadow: 0 6px 20px rgba(196, 99, 58, 0.35);
-  transform: translateY(-3px) scale(1.05);
+/* Rocket image inside */
+.back-to-top__rocket {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Click press: scale down slightly */
-.back-to-top--pressed {
-  transform: translateY(0) scale(0.92) !important;
-  box-shadow: none !important;
+/* Dark mode theme adaptation */
+:root[data-theme="dark"] .back-to-top__rocket {
+  filter: invert(1);
+}
+
+/* Hover: lift + accent colour + rocket idle hover animation */
+.back-to-top:hover {
+  background-color: var(--clr-accent);
+  box-shadow: 0 6px 22px rgba(196, 99, 58, 0.4);
+  transform: translateY(-3px) scale(1.06);
+}
+
+:root[data-theme="dark"] .back-to-top:hover .back-to-top__rocket {
+  filter: invert(0);
+}
+
+.back-to-top:hover .back-to-top__rocket {
+  animation: rocketHover 0.75s ease-in-out infinite alternate;
+}
+
+@keyframes rocketHover {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-3px) rotate(-4deg);
+  }
+}
+
+/* Launching animation on click */
+.back-to-top--launching .back-to-top__rocket {
+  animation: rocketLaunch 0.68s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+}
+
+@keyframes rocketLaunch {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  22% {
+    transform: translateY(3px) scale(0.9) rotate(2deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-46px) scale(0.65) rotate(-6deg);
+    opacity: 0;
+  }
 }
 
 /* Focus visible ring */
@@ -1275,18 +1323,18 @@ ol {
   outline-offset: 3px;
 }
 
-/* Ripple element */
+/* Ripple element on launch */
 .back-to-top__ripple {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.3);
   transform: scale(0);
   opacity: 0;
   pointer-events: none;
 }
 
-.back-to-top--pressed .back-to-top__ripple {
+.back-to-top--launching .back-to-top__ripple {
   animation: ripple-burst 0.5s ease-out forwards;
 }
 
@@ -1295,14 +1343,13 @@ ol {
     transform: scale(0);
     opacity: 1;
   }
-
   100% {
     transform: scale(2.5);
     opacity: 0;
   }
 }
 
-/* Reduced motion: skip all transitions except visibility */
+/* Reduced motion: gentle fade */
 @media (prefers-reduced-motion: reduce) {
   .back-to-top {
     transition: opacity var(--t-fast);
@@ -1311,6 +1358,11 @@ ol {
 
   .back-to-top--visible {
     transform: none;
+  }
+
+  .back-to-top:hover .back-to-top__rocket,
+  .back-to-top--launching .back-to-top__rocket {
+    animation: none;
   }
 
   .back-to-top__ripple {
@@ -1323,7 +1375,11 @@ ol {
   .back-to-top {
     bottom: var(--sp-5);
     right: var(--sp-5);
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
+  }
+  .back-to-top__rocket {
+    width: 23px;
+    height: 23px;
   }
 }

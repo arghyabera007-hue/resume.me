@@ -131,7 +131,7 @@ const DEFAULT_RECENT = [
 
 function IconSearch() {
   return (
-    <svg className="glass-icon glass-icon--search" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="glass-icon glass-icon--search" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="11" cy="11" r="8" />
       <line x1="21" y1="21" x2="16.65" y2="16.65" />
     </svg>
@@ -140,7 +140,7 @@ function IconSearch() {
 
 function IconClose() {
   return (
-    <svg className="glass-icon glass-icon--close" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="glass-icon glass-icon--close" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
@@ -149,7 +149,7 @@ function IconClose() {
 
 function IconHistory() {
   return (
-    <svg className="glass-icon glass-icon--history" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg className="glass-icon glass-icon--history" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
       <path d="M3 3v5h5" />
       <path d="M12 7v5l3 3" />
@@ -320,7 +320,7 @@ export default function GlassSearchBar() {
   }
 
   return (
-    <div className="glass-search-wrapper" ref={cardRef}>
+    <div className="glass-search-wrapper">
       {/* Soft dimmed backdrop when expanded */}
       {isOpen && (
         <div
@@ -346,7 +346,7 @@ export default function GlassSearchBar() {
 
       {/* Expanded Glass Card Modal */}
       {isOpen && (
-        <div className="glass-card-container animate-glass-in" role="dialog" aria-modal="true" aria-label="Component search">
+        <div className="glass-card-container animate-glass-in" ref={cardRef} role="dialog" aria-modal="true" aria-label="Component search">
           {/* Glass Card Outer Frame with .glass modifier */}
           <div className="glass-card glass">
             {/* Glowing Search Input Bar */}
